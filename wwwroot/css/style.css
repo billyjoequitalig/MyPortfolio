@@ -9682,3 +9682,13 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+/* Allow vertical page scrolling when swiping over the hero carousel on touch devices */
+.owl-carousel,
+.owl-carousel .owl-stage,
+.owl-carousel .owl-stage .owl-item,
+.owl-carousel.home-slider,
+.owl-carousel.home-slider .slider-item {
+    touch-action: pan-y;
+    -ms-touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+}

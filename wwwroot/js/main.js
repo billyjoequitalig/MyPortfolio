@@ -275,3 +275,26 @@
 
 })(jQuery);
 
+// Collapse mobile navbar on scroll or touchmove
+(function ($) {
+  "use strict";
+
+  $(function () {
+    var $navCollapse = $("#ftco-nav"); // the collapse element (id in _Layout.cshtml)
+
+    // Close on window scroll or touchmove (mobile swipe)
+    $(window).on("scroll touchmove", function () {
+      if ($navCollapse.hasClass("show")) {
+        $navCollapse.collapse("hide");
+      }
+    });
+
+    // Also ensure nav collapses when a nav link is clicked (anchor)
+    $(".navbar-nav a").on("click", function () {
+      if ($navCollapse.hasClass("show")) {
+        $navCollapse.collapse("hide");
+      }
+    });
+  });
+})(jQuery);
+
